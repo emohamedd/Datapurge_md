@@ -1,4 +1,7 @@
 # Data Purge Script By Emohamedd
+<img width="1275" alt="Screen Shot 2023-05-23 at 12 58 51 PM" src="https://github.com/emohamedd/Datapurge_md/assets/102475281/2229bb53-2ae4-43eb-9222-37bec4af6685">
+
+
 
 The Data Purge script is designed to help you clean up various caches and temporary files on your macOS computer. It targets specific directories related to applications such as Slack, VS Code, Discord, and Chrome, as well as general system caches.
 
@@ -28,3 +31,7 @@ The Data Purge script is designed to help you clean up various caches and tempor
 
    ```bash
    chmod +x data_purge.sh
+4. Run the script by entering the following command:
+    ```bash
+   ./data_purge.sh
+5. After the data purge process is completed, the script will display your updated computer storage
