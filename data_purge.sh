@@ -56,13 +56,23 @@ echo -e "\033[33m\n✵✵ Starting the cleanup process. Please wait... ✵✵\n\
 /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Default/File\ System &>/dev/null
 /bin/rm -rf "$HOME"/Library/Application\ Support/Google/Chrome/Profile\ [0-9]/File\ System &>/dev/null
 
+count=0
+
+while [ $count -lt 3 ]; do
+    printf "\033[31m Scanning...\n\033"
+    sleep 2 
+    ((count++))
+done
+
+new_store=$(df -h "$HOME" | awk '{if (NR==2) print $4}' | tr 'i' 'B')
+
+if [ "$Store" == "$new_store" ]; then
+  echo -e "\033[33m\n✵✵ You Have Nothing to Erase. Your cache is Empty. ✵✵\n\033[0m"
+else
+  echo -e "\033[97m\nYour Current Computer Storage After Cleaning: \033[32m╚═★ $new_store ★═╝\033[97m \033[0m"
+fi
 
 
-echo -e "\033[33m\n✵✵ Cleanup process completed. Files and data erased successfully ✵✵\n\033[0m"
 
 
-
-echo -e "\033[97m\n Your Current Computer Storage After Cleaning  : \033[32m╚═★ $Store ★═╝\033[97m \033[0m"
-
-echo -e "\n\033[97m\n Follow My GitHub:\033[32m ╚═★ emohamedd ★═╝\033[97m \033[0m""
-
+echo -e "\n\033[97m\n Dont forget To Follow My GitHub:\033[32m --═★ Emohamedd ★═--\033[97m \033[0m\n"
